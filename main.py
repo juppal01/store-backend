@@ -10,8 +10,10 @@ import jwt, os
 from dotenv import load_dotenv
 
 from routes import products, categories, orders, settings, auth
+from database import init_db
 
 load_dotenv()
+init_db()   # auto-create tables on first boot
 
 app = FastAPI(title="ArtisanCo. Store API", version="1.0.0")
 
